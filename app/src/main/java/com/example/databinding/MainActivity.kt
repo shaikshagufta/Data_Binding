@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.person = Person("Hello Person", 23)
+        binding.person = Person("Hello Person", 23, R.drawable.ic_emoji)
     }
 }
