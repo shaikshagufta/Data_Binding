@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="text"
-            type="String" />
+            name="person"
+            type="com.example.databinding.Person" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,14 +16,25 @@
         tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/personName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{text}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:text="@{person.name}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/personAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="@{String.valueOf(person.age)}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

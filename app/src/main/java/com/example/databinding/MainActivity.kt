@@ -14,9 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.text = "Hello again!"
-        binding.textView.setOnClickListener {
-            Toast.makeText(this, "OK", Toast.LENGTH_LONG).show()
-        }
+        binding.person = Person("Hello Person", 23)
     }
 }
