@@ -10,11 +10,11 @@ import androidx.databinding.ViewDataBinding
 import com.example.databinding.databinding.FragmentPersonBinding
 
 
-class PersonFragment : Fragment(/*R.layout.fragment_person*/) {
+class PersonFragment : Fragment(R.layout.fragment_person) {
 
     lateinit var binding: FragmentPersonBinding
 
-    override fun onCreateView(
+    /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
@@ -22,10 +22,10 @@ class PersonFragment : Fragment(/*R.layout.fragment_person*/) {
         //return inflater.inflate(R.layout.fragment_person, container, false)
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_person, container, false)
         return binding.root
-    }
+    }*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        //binding = FragmentPersonBinding.bind(view)
+        binding = FragmentPersonBinding.bind(view)
         binding.person= Person("hello person", 33, R.drawable.ic_emoji)
     }
 }
