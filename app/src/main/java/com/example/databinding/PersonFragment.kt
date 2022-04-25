@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.viewModels
 import com.example.databinding.databinding.FragmentPersonBinding
 
 
 class PersonFragment : Fragment(R.layout.fragment_person) {
 
     lateinit var binding: FragmentPersonBinding
+    private val viewModel: PersonViewModel by viewModels()
 
     /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +28,9 @@ class PersonFragment : Fragment(R.layout.fragment_person) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentPersonBinding.bind(view)
-        binding.person= Person("hello person", 33, R.drawable.ic_emoji)
+        //dependency injection
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this//specifying the life cycle owner
+        //binding.person= Person("hello person", 33, R.drawable.ic_emoji)
     }
 }
