@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding
 import com.example.databinding.databinding.FragmentPersonBinding
 
 
-class PersonFragment : Fragment() {
+class PersonFragment : Fragment(/*R.layout.fragment_person*/) {
 
     lateinit var binding: FragmentPersonBinding
 
@@ -25,7 +25,7 @@ class PersonFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding = FragmentPersonBinding.bind(view)
-        Person("hello person", 33, R.drawable.ic_emoji)
+        //binding = FragmentPersonBinding.bind(view)
+        binding.person= Person("hello person", 33, R.drawable.ic_emoji)
     }
 }
